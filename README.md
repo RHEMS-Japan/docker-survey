@@ -1,6 +1,6 @@
 # Docker Survey
 
-## install list
+## install package list
 
 |package|commands|
 |:---:|:---:|
@@ -24,3 +24,4 @@
 * aws
 * gcloud
 * tccli
+* kubectl

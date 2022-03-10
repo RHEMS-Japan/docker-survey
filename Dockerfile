@@ -3,6 +3,7 @@ FROM ubuntu:${UBUNTU_VERSION}
 
 ENV DEBIAN_FRONTEND=noninteractive
 ARG PYTHON=python3
+ARG KUBECTL_VERSION=1.23.0
 
 WORKDIR /root
 
@@ -38,8 +39,14 @@ RUN ln -s $(which ${PYTHON}) /usr/local/bin/python
 
 # Tencent Cloud CLI
 RUN python -m pip install --no-cache-dir tccli
-# RUN pip3 install tccli
 # AWS CLI
 RUN chmod +x ./awscli-install.sh && ./awscli-install.sh
 # gloud CLI
 RUN chmod +x ./gcloud-install.sh && ./gcloud-install.sh
+
+# kubectl
+RUN curl -LO "https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl" && \
+    chmod +x ./kubectl && \
+    sudo mv ./kubectl /usr/local/bin/kubectl
+
+    
