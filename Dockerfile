@@ -7,10 +7,9 @@ ARG KUBECTL_VERSION=1.23.0
 
 WORKDIR /root
 
-COPY *.sh .
-
-RUN apt-get update && apt-get -y upgrade
-RUN apt-get install -y tzdata \
+RUN apt-get update && apt-get -y upgrade && \
+    apt-get install -y --no-install-recommends \
+                    tzdata \
                     sudo \
                     unzip \
                     ${PYTHON} \
@@ -26,19 +25,22 @@ RUN apt-get install -y tzdata \
                     wget
 
 # for newly git
-RUN sudo apt-get install -y apt-file && \
-    sudo apt-file update && \
-    sudo apt-file search add-apt-repository && \
-    sudo apt-get install -y software-properties-common && \
-    sudo add-apt-repository ppa:git-core/ppa && \
-    sudo apt-get update && sudo apt-get -y upgrade && \
-    sudo apt-get install -y git
+RUN apt-get install -y apt-file && \
+    apt-file update && \
+    apt-file search add-apt-repository && \
+    apt-get install -y software-properties-common && \
+    add-apt-repository ppa:git-core/ppa && \
+    apt-get update && sudo apt-get -y upgrade && \
+    apt-get install -y git
 
 RUN ${PYTHON} -m pip --no-cache-dir install --upgrade pip
-RUN ln -s $(which ${PYTHON}) /usr/local/bin/python
+RUN ln -s "$(which ${PYTHON})" /usr/local/bin/python
 
 # Tencent Cloud CLI
 RUN python -m pip install --no-cache-dir tccli
+
+COPY *.sh .
+
 # AWS CLI
 RUN chmod +x ./awscli-install.sh && ./awscli-install.sh
 # gloud CLI
@@ -47,6 +49,4 @@ RUN chmod +x ./gcloud-install.sh && ./gcloud-install.sh
 # kubectl
 RUN curl -LO "https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl" && \
     chmod +x ./kubectl && \
-    sudo mv ./kubectl /usr/local/bin/kubectl
-
-    
+    mv ./kubectl /usr/local/bin/kubectl

@@ -1,5 +1,10 @@
 # Docker Survey
 
+![Docker Automated build](https://img.shields.io/docker/automated/rhemsjapan/docker-survey?style=flat-square)
+
+https://hub.docker.com/repository/docker/rhemsjapan/docker-survey
+
+
 ## install package list
 
 |package|commands|
