@@ -23,6 +23,7 @@ https://hub.docker.com/repository/docker/rhemsjapan/docker-survey
 |unzip|unzip|
 |vim|vim|
 |wget|wget|
+|netcat|nc|
 
 ## install CLI
 

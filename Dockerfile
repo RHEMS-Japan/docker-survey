@@ -22,7 +22,8 @@ RUN apt-get update && apt-get -y upgrade && \
                     telnet \
                     iproute2 \
                     traceroute \
-                    wget
+                    wget \
+                    netcat
 
 # for newly git
 RUN apt-get install -y apt-file && \
