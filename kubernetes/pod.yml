@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: survey
+  namespace: survey
+spec:
+  shareProcessNamespace: true
+  containers:
+  - name: docker-survey
+    image: rhemsjapan/docker-survey:latest
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    command: [ "/bin/bash", "-c", "--" ]
+    args: [ "while true; do sleep 30; done;" ]
+  restartPolicy: Never
