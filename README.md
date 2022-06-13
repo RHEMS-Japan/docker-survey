@@ -1,9 +1,6 @@
 # Docker Survey
 
-![Docker Automated build](https://img.shields.io/docker/automated/rhemsjapan/docker-survey?style=flat-square)
-
-https://hub.docker.com/repository/docker/rhemsjapan/docker-survey
-
+[![Docker Automated build](https://badges.rhems-japan.com/api-get-dockerhub-badge.svg?user_id=zCPep23H7YFzCY90rQez&owner=rhemsjapan&namespace=rhemsjapan&name=docker-survey&timedelta=9)](https://hub.docker.com/r/rhemsjapan/docker-survey)
 
 ## install package list
 
