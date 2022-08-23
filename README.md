@@ -21,6 +21,8 @@
 |vim|vim|
 |wget|wget|
 |netcat|nc|
+|mysql-server|mysql|
+|redis-server|redis-cli|
 
 ## install CLI
 
