@@ -2,6 +2,13 @@
 
 [![Docker Automated build](https://badges.rhems-japan.com/api-get-dockerhub-badge.svg?user_id=zCPep23H7YFzCY90rQez&owner=rhemsjapan&namespace=rhemsjapan&name=docker-survey&timedelta=9)](https://hub.docker.com/r/rhemsjapan/docker-survey)
 
+## setup
+
+```sh
+kubectl apply -f https://raw.githubusercontent.com/RHEMS-Japan/docker-survey/main/kubernetes/namespace.yml
+kubectl apply -f https://raw.githubusercontent.com/RHEMS-Japan/docker-survey/main/kubernetes/survey.yml
+```
+
 ## install package list
 
 |package|commands|
