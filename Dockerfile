@@ -23,6 +23,8 @@ RUN apt-get update && apt-get -y upgrade && \
                     iproute2 \
                     traceroute \
                     wget \
+                    mysql-server \
+                    redis-server \
                     netcat
 
 # for newly git
