@@ -3,7 +3,7 @@ FROM ubuntu:${UBUNTU_VERSION}
 
 ENV DEBIAN_FRONTEND=noninteractive
 ARG PYTHON=python3
-ARG KUBECTL_VERSION=1.23.0
+ARG KUBECTL_VERSION=1.23.6
 
 WORKDIR /root
 
@@ -50,6 +50,5 @@ RUN chmod +x ./awscli-install.sh && ./awscli-install.sh
 RUN chmod +x ./gcloud-install.sh && ./gcloud-install.sh
 
 # kubectl
-RUN curl -LO "https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl" && \
-    chmod +x ./kubectl && \
-    mv ./kubectl /usr/local/bin/kubectl
+RUN chmod +x ./kubectl-install.sh && ./kubectl-install.sh
+
