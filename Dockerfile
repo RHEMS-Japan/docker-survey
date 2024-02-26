@@ -24,6 +24,7 @@ RUN apt-get update && apt-get -y upgrade && \
                     traceroute \
                     wget \
                     mysql-server \
+                    libmysqlclient-dev \
                     redis-server \
                     netcat
 
@@ -52,3 +53,8 @@ RUN chmod +x ./gcloud-install.sh && ./gcloud-install.sh
 # kubectl
 RUN chmod +x ./kubectl-install.sh && ./kubectl-install.sh
 
+# myloader and mydumper
+RUN chmod +x ./mydumper-myloader-install.sh && ./mydumper-myloader-install.sh
+
+# tiup
+RUN chmod +x ./tiup-install.sh && ./tiup-install.sh
