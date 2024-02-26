@@ -24,7 +24,6 @@ RUN apt-get update && apt-get -y upgrade && \
                     traceroute \
                     wget \
                     mysql-server \
-                    libmysqlclient-dev \
                     redis-server \
                     netcat
 
