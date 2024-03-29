@@ -25,7 +25,8 @@ RUN apt-get update && apt-get -y upgrade && \
                     wget \
                     mysql-server \
                     redis-server \
-                    netcat
+                    netcat \
+                    postgresql
 
 # for newly git
 RUN apt-get install -y apt-file && \
