@@ -31,6 +31,7 @@ kubectl apply -f https://raw.githubusercontent.com/RHEMS-Japan/docker-survey/mai
 |mysql-server|mysql|
 |redis-server|redis-cli|
 |postgresql|psql|
+|mtr|mtr|
 
 ## install CLI
 
