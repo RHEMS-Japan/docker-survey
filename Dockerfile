@@ -29,7 +29,8 @@ RUN apt-get update && apt-get -y upgrade && \
                     mtr \
                     lsb-release \
                     gpg \
-                    libatomic1
+                    libatomic1 \
+                    jq
 
 # Redis
 RUN curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
